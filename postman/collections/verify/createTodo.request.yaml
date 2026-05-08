@@ -1,0 +1,10 @@
+$kind: http-request
+name: createTodo
+url: http://localhost:9002/todo/create
+method: POST
+headers:
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Zjg4ZDNhMmNmMTYxNDJlZGU0NDllZSIsImlhdCI6MTc3ODA4OTU1MSwiZXhwIjoxNzc4OTUzNTUxfQ.jZ6A17WmAd_apqlaQyVGRHA1jVO9nJi-ZU_kX5WEtkE
+body:
+  type: json
+  content: "{\r\n    \"title\":\"moon\"\r\n}"
+order: 3167050162072447

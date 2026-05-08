@@ -1,0 +1,7 @@
+$kind: http-request
+name: http://localhost:9002/user/verify
+url: http://localhost:9002/user/verify
+method: GET
+headers:
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWY4OGQzYTJjZjE2MTQyZWRlNDQ5ZWUiLCJpYXQiOjE3Nzc4OTY3NjIsImV4cCI6MTc3Nzg5NzA2Mn0.gd5_b9fpi5O68t9Hdwl7jyHn99SZZuZS8lC735Ks_RI
+order: 1777967705044

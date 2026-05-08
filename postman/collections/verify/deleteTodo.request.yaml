@@ -1,0 +1,7 @@
+$kind: http-request
+name: deleteTodo
+url: http://localhost:9002/todo/deleteTodoa808f4cb8b847f8
+method: GET
+headers:
+  Authorization: ""
+order: 4103329118664698
