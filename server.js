@@ -1,27 +1,19 @@
-import express from "express"
-import dbConnect from "./src/config/dbConnect.js"
+import express from "express";
+import dbConnect from "./src/config/dbConnect.js";
+import "dotenv/config";
 import userRoute from "./src/routes/userRoute.js";
 import todoRoute from "./src/routes/todoRoute.js";
+import multerRoute from "./src/routes/multerRoute.js";
 
-import dotenv from "dotenv"
-dotenv.config()
-
- 
-
-const app = express()
-
-const port = process.env.PORT
-app.use(express.json())
-app.use('/user', userRoute)
-app.use('/todo', todoRoute)
-
-
-
-
-
-dbConnect()
+const app = express();
+const port = process.env.PORT;
+dbConnect();
+app.use(express.json());
+app.use("/upload", express.static("upload"));
+app.use("/user", userRoute);
+app.use("/todo", todoRoute);
+app.use("/multer", multerRoute);
 
 app.listen(port, () => {
-    console.log("Server is Running at 9002 ");
-
-})
+  console.log(`Server Started on Port: ${port}`);
+});

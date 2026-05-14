@@ -1,6 +1,8 @@
+
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv/config";
 import userSchema from "../models/userSchema.js";
+import sessionSchema from "../models/sessionSchema.js";
 
 export const hasToken = async (req, res, next) => {
     try {
@@ -37,8 +39,19 @@ export const hasToken = async (req, res, next) => {
                             message: "User not found!"
                         });
                     }
-                    req.userId = id;
-                    next();
+                    // req.userId = id;
+                    // next();
+
+                    const existing = await sessionSchema.findOne({ userId: id });
+                    if (existing) {
+                        req.userId = id;
+                        next();
+                    } else {
+                        return res.status(200).json({
+                            success: true,
+                            message: "User logged out already",
+                        });
+                    }
                 }
             })
         }

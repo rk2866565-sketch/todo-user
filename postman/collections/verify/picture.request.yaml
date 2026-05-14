@@ -1,0 +1,14 @@
+$kind: http-request
+name: picture
+url: http://localhost:9002/multer/upload
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: picture
+      src:
+        - /C:/Users/LAPPY HUB/Downloads/wallpaperflare.com_wallpaper-_1_.jpeg
+      description: ""
+      disabled: false
+order: 4474484201572728

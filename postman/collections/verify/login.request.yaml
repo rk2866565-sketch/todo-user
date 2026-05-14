@@ -6,11 +6,27 @@ body:
   type: json
   content: "{\r
 
-    \ \r
+    \   \"email\": \"rohitlogin+22@gmail.com\",\r
 
-    \    \"email\": \"rohit.test+22@example.com\", \r
-
-    \    \"password\": \"123456\"\r
+    \   \"password\": \"123456\"\r
 
     }"
+scripts:
+  - type: afterResponse
+    code: "var jsonData = pm.response.json();\r
+
+      console.log(jsonData)\r
+
+      if (jsonData.accessToken) {\r
+
+      pm.environment.set(\"accessToken\", jsonData.accessToken);\r
+
+      }\r
+
+      if (jsonData.refreshToken) {\r
+
+      pm.environment.set(\"refreshToken\", jsonData.refreshToken);\r
+
+      }"
+    language: text/javascript
 order: 3160176740046604
